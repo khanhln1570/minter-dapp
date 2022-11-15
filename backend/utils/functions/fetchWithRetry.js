@@ -5,15 +5,14 @@ const { AUTH } = require(`${basePath}/src/config.js`);
 function fetchNoRetry(url, options) {
   return new Promise((resolve, reject) => {
       options.headers.Authorization = AUTH;
-
+ 
       fetch(url, options)
         .then((res) => {
           const status = res.status;
-
           if (status === 200) {
             return res.json();
           } else {
-            throw `ERROR STATUS: ${status}`;
+            throw `ERROR STATUS: ${status}`+res.statusText;
           }
         })
         .then((json) => {
@@ -26,6 +25,8 @@ function fetchNoRetry(url, options) {
         .catch((error) => {
           console.error(`CATCH ERROR: ${error}`);
         });
+   
+      
   });
 }
 

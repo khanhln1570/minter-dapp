@@ -23,7 +23,8 @@ let {
   BASE_URI,
   PREREVEAL_TOKEN_URI,
   PRESALE_MINT_START_DATE,
-  PRESALE_WHITELISTED_ADDRESSES
+  PRESALE_WHITELISTED_ADDRESSES,
+  AUTH
 } = require(`${basePath}/src/config.js`);
 
 const deployContract = async () => {
@@ -75,7 +76,7 @@ const deployContract = async () => {
   }
 
   try {
-    const url = `https://api.nftport.xyz/v0/contracts/collections`;
+    const url = 'https://api.nftport.xyz/v0/contracts/collections';
     const contract = {
       chain: CHAIN.toLowerCase(),
       name: CONTRACT_NAME,
@@ -97,11 +98,12 @@ const deployContract = async () => {
     const options = {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(contract),
     };
     const response = await fetchNoRetry(url, options);
+    console.log(response);
     fs.writeFileSync(`${basePath}/build/contract/_deployContractResponse.json`, JSON.stringify(response, null, 2));
     if(response.response === "OK") {
       console.log(`Contract deployment started.`);
