@@ -3,7 +3,7 @@ const chain = 'polygon'; // goerli, polygon, or ethereum
 
 const welcome_h1 = "Welcome to the Digital Unicorn NFT Project!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
-const welcome_p = 'The Digital Unicorn NFT Project is a decentralized, open-source project that aims to demonstrate how to develope and launch your own NFT Collection. Follow step by step on the <a href="https://youtube.com/codestackr"  target="_blank" rel="noopener noreferrer">codeSTACKr</a> YouTube channel.';
+const welcome_p = 'The Digital Unicorn Logo NFT collection is an NFT collection inspired by the Digital Unicorn Web3 Agency brand logo.\nIn the mindset of the Artist, the beautiful unicorn\'s body, hair, and corn are assembled in a variety of color combinations creating a rarity.\nWebsite: https://www.digitalunicorn.fr \nPowered by: https://www.ntfpush.io';
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";
